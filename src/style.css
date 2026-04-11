@@ -521,6 +521,12 @@ button:focus {
   border-radius: 0px !important;
 }
 
+.hackathon-img {
+  height: 250px !important;
+  object-fit: cover !important;
+  border-radius: 10px !important;
+}
+
 .btn-primary {
   color: #fff !important;
   background-color: #623686 !important;
@@ -661,7 +667,7 @@ button:focus {
 }
 
 .resume .resume-item {
-  padding: 0 0 10px 25px;
+  padding: 0 0 40px 25px;
   margin-top: -2px;
   border-left: 2px solid #8a49a8;
   position: relative;

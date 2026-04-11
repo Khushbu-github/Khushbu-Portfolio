@@ -6,6 +6,11 @@ import Techstack from "./Techstack";
 import Aboutcard from "./AboutCard";
 import laptopImg from "../../Assets/about.png";
 import Toolstack from "./Toolstack";
+import ExperienceTimeline from "./ExperienceTimeline";
+import { FaChalkboardTeacher, FaHandsHelping } from "react-icons/fa";
+import { GiGavel } from "react-icons/gi";
+import { HiUsers } from "react-icons/hi";
+
 
 function About() {
   return (
@@ -36,13 +41,118 @@ function About() {
               <img src={laptopImg} alt="about" className="img-fluid" />
             </Col>
           </Row>
-          <h1 className="project-heading">
+
+          <h1 className="project-heading" style={{ paddingTop: "120px" }}>
+            <strong className="purple">Education </strong>
+          </h1>
+          <Row className="resume" style={{ justifyContent: "center", paddingBottom: "80px" }}>
+            <Col md={9} className="resume-left">
+              <ExperienceTimeline
+                title="Dayananda Sagar College of Engineering, Bengaluru"
+                role="B.E. in Artificial Intelligence and Machine Learning"
+                duration="2023 – 2027"
+                description={
+                  <>
+                    Currently pursuing Bachelor of Engineering with a focus on AI and ML.
+                    <br />
+                    Maintaining a strong academic record with a CGPA of <strong className="purple">9.27</strong>.
+                  </>
+                }
+              />
+              <ExperienceTimeline
+                title="JS Pre-University College, Bengaluru"
+                duration="2021 – 2023"
+                description={
+                  <>
+                    Completed PU education with an outstanding score of <strong className="purple">96%</strong>.
+                  </>
+                }
+              />
+              <ExperienceTimeline
+                title="Pine Woods English School, Bengaluru"
+                duration="2015 – 2021"
+                description={
+                  <>
+                    Completed secondary education with a distinction score of <strong className="purple">97%</strong>.
+                  </>
+                }
+              />
+            </Col>
+          </Row>
+
+          <h1 className="project-heading" style={{ paddingTop: "120px" }}>
+            Professional <strong className="purple">Experience </strong>
+          </h1>
+          <Row className="resume" style={{ justifyContent: "center", paddingBottom: "80px" }}>
+            <Col md={9} className="resume-left">
+              <ExperienceTimeline
+                title="AJDigitals"
+                role="Freelance Full Stack Developer"
+                duration="2025 – Present"
+                description={
+                  <>
+                    Built and delivered <strong className="purple">9+ production-ready</strong> web applications for a digital marketing company.
+                    <br />
+                    Developed scalable full-stack systems using React, Tailwind CSS, Node.js, and MongoDB while optimizing for SEO and performance.
+                  </>
+                }
+              />
+              <ExperienceTimeline
+                title="MyStartupWave"
+                role="Software Developer Intern"
+                duration="Nov 2025 – Dec 2025"
+                description={
+                  <>
+                    Built reusable UI components using React and Tailwind CSS.
+                    <br />
+                    Integrated frontend modules with backend APIs in an <strong className="purple">agile startup environment</strong>.
+                  </>
+                }
+              />
+            </Col>
+          </Row>
+
+          <h1 className="project-heading" style={{ paddingTop: "120px", paddingBottom: "50px" }}>
+            Extracurricular Experience & <strong className="purple">Leadership </strong>
+          </h1>
+          <Row style={{ justifyContent: "center", paddingBottom: "120px" }}>
+            <Col md={10}>
+              <Row style={{ justifyContent: "center" }}>
+                <Col md={6} style={{ marginBottom: "50px", textAlign: "center" }}>
+                  <FaChalkboardTeacher size={50} className="purple" style={{ marginBottom: "15px" }} />
+                  <h4 style={{ fontWeight: "700", color: "white" }}>Full Stack Developer Trainer</h4>
+                  <p className="purple" style={{ fontWeight: "600", marginBottom: "5px" }}>Jain Group of Institutions | 2025</p>
+                  <p style={{ color: "white", opacity: "0.9" }}>Mentored and trained 200+ students in full stack web development over a 5-day program.</p>
+                </Col>
+                <Col md={6} style={{ marginBottom: "50px", textAlign: "center" }}>
+                  <GiGavel size={50} className="purple" style={{ marginBottom: "15px" }} />
+                  <h4 style={{ fontWeight: "700", color: "white" }}>Judge - Ideathon 2025</h4>
+                  <p className="purple" style={{ fontWeight: "600", marginBottom: "5px" }}>Ideahive | 2025</p>
+                  <p style={{ color: "white", opacity: "0.9" }}>Evaluated innovative project ideas based on feasibility, technical implementation, and impact.</p>
+                </Col>
+                <Col md={6} style={{ marginBottom: "50px", textAlign: "center" }}>
+                  <HiUsers size={50} className="purple" style={{ marginBottom: "15px" }} />
+                  <h4 style={{ fontWeight: "700", color: "white" }}>Team Lead</h4>
+                  <p className="purple" style={{ fontWeight: "600", marginBottom: "5px" }}>CodeZero Technical Club | 2024 – Present</p>
+                  <p style={{ color: "white", opacity: "0.9" }}>Leading technical events and mentoring students in frontend and backend system design.</p>
+                </Col>
+                <Col md={6} style={{ marginBottom: "50px", textAlign: "center" }}>
+                  <FaHandsHelping size={50} className="purple" style={{ marginBottom: "15px" }} />
+                  <h4 style={{ fontWeight: "700", color: "white" }}>Tech Team & Volunteer</h4>
+                  <p className="purple" style={{ fontWeight: "600", marginBottom: "5px" }}>Aventus Hackathon | 2023 – 2025</p>
+                  <p style={{ color: "white", opacity: "0.9" }}>Assisted with event setup, technical support, and participant coordination.</p>
+                </Col>
+              </Row>
+            </Col>
+          </Row>
+
+          <h1 className="project-heading" style={{ paddingTop: "120px" }}>
             Professional <strong className="purple">Skillset </strong>
           </h1>
 
           <Techstack />
 
-          <h1 className="project-heading">
+          <h1 className="project-heading" style={{ paddingTop: "100px" }}>
             <strong className="purple">Tools</strong> I use
           </h1>
           <Toolstack />

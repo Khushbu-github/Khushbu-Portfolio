@@ -8,37 +8,44 @@ function AboutCard() {
       <Card.Body>
         <blockquote className="blockquote mb-0">
           <p style={{ textAlign: "justify" }}>
-            Hi everyone! I’m <span className="purple">Soumyajit Behera</span>{" "}
-            from <span className="purple">Bhubaneswar, India</span>.
+            Hi everyone! I'm <span className="purple">Khushbu R Hajari</span>{" "}
+            from <span className="purple">Bengaluru, India</span>.
             <br />
-            I’m currently working as a{" "}
-            <span className="purple">Software Developer</span> at{" "}
-            <span className="purple">Juspay</span>.
-            <br />I hold an Integrated M.Sc. (IMSc) in{" "}
-            <span className="purple">Mathematics and Computing</span> from{" "}
-            <span className="purple">BIT Mesra</span>.
+            I'm currently working as a{" "}
+            <span className="purple">Freelance Full Stack Developer</span> at{" "}
+            <span className="purple">AJDigitals</span>.
+            <br />I am pursuing a{" "}
+            <span className="purple">B.E. in AI &amp; Machine Learning</span>{" "}
+            at{" "}
+            <span className="purple">
+              Dayananda Sagar College of Engineering, Bengaluru
+            </span>
+            .
             <br />
             <br />
-            Outside of coding, I love engaging in activities that keep me
-            creative and inspired:
+            Apart from coding, some other activities that I love:
           </p>
 
           <ul>
             <li className="about-activity">
-              <ImPointRight /> Playing Games 🎮
+              <ImPointRight /> Dance — Bharatanatyam, Western &amp; Semi-classical 
             </li>
             <li className="about-activity">
-              <ImPointRight /> Writing Tech Blogs ✍️
+              <ImPointRight /> Competing in Hackathons 
             </li>
             <li className="about-activity">
-              <ImPointRight /> Traveling and Exploring New Places 🌍
+              <ImPointRight /> Art & Aesthetics
             </li>
+            <li className="about-activity">
+              <ImPointRight /> District-Level Throwball Player 
+            </li>
+         
           </ul>
 
           <p style={{ color: "rgb(155 126 172)" }}>
-            "Strive to build things that make a difference!"{" "}
+            "Code is not just logic — it's a bridge between ideas and impact!"{" "}
           </p>
-          <footer className="blockquote-footer">Soumyajit</footer>
+          {/* <footer className="blockquote-footer">Khushbu</footer> */}
         </blockquote>
       </Card.Body>
     </Card>

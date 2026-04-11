@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import myImg from "../../Assets/avatar.svg";
+import myImg from "../../Assets/Me.jpeg";
 import Tilt from "react-parallax-tilt";
 
 function Home2() {
@@ -13,38 +13,39 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I’m a Software Engineer who loves transforming ideas into
-              reliable, scalable products. Over time, I’ve explored several
-              technologies and found my passion in building high-performance
-              systems and intuitive user experiences.
+              I'm a <b className="purple">Full-Stack Developer</b> passionate
+              about building scalable, end-to-end applications and data-driven
+              systems. I love solving real-world problems through clean
+              engineering and intelligent solutions.
               <br />
               <br />
-              I’m proficient in
+              I'm proficient in
               <i>
                 <b className="purple">
                   {" "}
-                  JavaScript, C++, Rust, Node.js, and Java{" "}
+                  TypeScript, JavaScript, Python, and C++{" "}
                 </b>
               </i>
-              — and I enjoy working across both backend and frontend stacks.
+              — and I enjoy working across both backend and frontend stacks,
+              as well as building ML-powered applications.
               <br />
               <br />
-              My key areas of interest include developing
+              My key areas of interest include
               <i>
                 <b className="purple">
                   {" "}
-                  Web Applications, Blockchain Solutions,{" "}
+                  Machine Learning, Data Analysis, Backend Systems,{" "}
                 </b>
               </i>
-              and exploring new ways to bridge on-chain and off-chain systems.
+              and designing robust REST APIs and Microservices architectures.
               <br />
               <br />
-              Whenever possible, I love building projects with
-              <b className="purple"> Node.js </b> and modern frameworks like{" "}
-              <i>
-                <b className="purple">React.js</b> and{" "}
-                <b className="purple">Next.js</b>.
-              </i>
+              I love building with{" "}
+              <b className="purple">Node.js, React.js</b> and{" "}
+              <b className="purple">Next.js</b>, and I'm an active
+              hackathon participant with{" "}
+              <b className="purple">10+ wins</b> at national and college
+              levels 🏆
             </p>
           </Col>
           <Col md={4} className="myAvtar">
