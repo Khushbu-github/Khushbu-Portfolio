@@ -4,7 +4,7 @@ import { SiNextdotjs, SiExpress, SiFastapi, SiPytorch, SiChainlink, SiOpencv } f
 import { GiBrain, GiArtificialIntelligence, GiProcessor } from "react-icons/gi";
 import { TbVectorTriangle, TbMathFunction, TbMathIntegral } from "react-icons/tb";
 import { MdAutoGraph, MdOutlineModelTraining, MdTune } from "react-icons/md";
-import { FaDatabase, FaChartBar, FaDice, FaProjectDiagram } from "react-icons/fa";
+import { FaDatabase, FaChartBar, FaDice } from "react-icons/fa";
 import { BsGraphUp } from "react-icons/bs";
 import C from "../../Assets/TechIcons/C++.svg";
 import Javascript from "../../Assets/TechIcons/Javascript.svg";
