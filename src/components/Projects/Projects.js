@@ -6,6 +6,7 @@ import intellicredit from "../../Assets/Projects/intellicredit.png";
 import interxai from "../../Assets/Projects/interxai.png";
 import healthdash from "../../Assets/Projects/healthdash.png";
 import incluverse from "../../Assets/Projects/incluverse.png";
+import smartcity from "../../Assets/Projects/smartcity.png";
 
 function Projects() {
   return (
@@ -58,6 +59,16 @@ function Projects() {
               description="Accessibility-focused digital platform with voice commands, OCR (Tesseract.js), multilingual translation (LangChain), and community engagement features for differently-abled users."
               ghLink="https://github.com/Khushbu-github/IncluVerse-AIOP-For-Diabled"
               demoLink="https://inclu-verse-aiop-for-diabled.vercel.app"
+            />
+          </Col>
+
+          <Col md={4} className="project-card">
+            <ProjectCard
+              imgPath={smartcity}
+              isBlog={false}
+              title="Bengaluru Smart City Incident Analyzer"
+              description="AI-powered platform integrating traffic, accident, complaint, and weather data for risk prediction and hotspot detection using Random Forest and XGBoost. Features a RAG pipeline with LangChain and an interactive map-based dashboard for real-time insights."
+              ghLink="https://github.com/Khushbu-github/Bengaluru-Smart-City-Incident-Analyzer"
             />
           </Col>
         </Row>

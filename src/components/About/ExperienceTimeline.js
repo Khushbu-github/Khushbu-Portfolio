@@ -16,7 +16,7 @@ function ExperienceTimeline(props) {
           <span style={{ fontSize: "0.9em", color: "#adb5bd" }}>{props.duration}</span>
         </p>
       )}
-      <div style={{ textAlign: "center", fontSize: "1em", color: "white", marginBottom: "5px" }}>
+      <div style={{ textAlign: "justify", fontSize: "1em", color: "white" }}>
         {props.description}
       </div>
     </div>

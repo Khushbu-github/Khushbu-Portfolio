@@ -13,39 +13,37 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I'm a <b className="purple">Full-Stack Developer</b> passionate
-              about building scalable, end-to-end applications and data-driven
-              systems. I love solving real-world problems through clean
-              engineering and intelligent solutions.
+              I'm an <b className="purple">AI Engineer & Full-Stack Developer</b> dedicated to bridging the gap between 
+              cutting-edge Machine Learning and robust software engineering. I specialize in building 
+              intelligent, data-driven systems that solve complex real-world challenges.
               <br />
               <br />
               I'm proficient in
               <i>
                 <b className="purple">
                   {" "}
-                  TypeScript, JavaScript, Python, and C++{" "}
+                  Python, TypeScript, JavaScript, and C++{" "}
                 </b>
               </i>
-              — and I enjoy working across both backend and frontend stacks,
-              as well as building ML-powered applications.
+              — focusing on developing scalable backend architectures and high-performance AI solutions.
               <br />
               <br />
-              My key areas of interest include
+              My core expertise lies in
               <i>
                 <b className="purple">
                   {" "}
-                  Machine Learning, Data Analysis, Backend Systems,{" "}
+                  Generative AI, Large Language Models (LLMs), and RAG systems,{" "}
                 </b>
               </i>
-              and designing robust REST APIs and Microservices architectures.
+              alongside building full-stack applications with <b className="purple">Node.js, React.js, and Next.js</b>.
               <br />
               <br />
-              I love building with{" "}
-              <b className="purple">Node.js, React.js</b> and{" "}
-              <b className="purple">Next.js</b>, and I'm an active
-              hackathon participant with{" "}
-              <b className="purple">10+ wins</b> at national and college
-              levels 🏆
+              I am passionate about <b className="purple">MLOps, Fine-tuning, and Computer Vision</b>, 
+              ensuring that AI models are not only accurate but also production-ready.
+              <br />
+              <br />
+              With <b className="purple">10+ Hackathon wins</b> 🏆 at national and college
+              levels, I thrive on rapid prototyping and turning innovative ideas into functional products.
             </p>
           </Col>
           <Col md={4} className="myAvtar">

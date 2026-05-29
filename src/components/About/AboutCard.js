@@ -12,8 +12,8 @@ function AboutCard() {
             from <span className="purple">Bengaluru, India</span>.
             <br />
             I'm currently working as a{" "}
-            <span className="purple">Freelance Full Stack Developer</span> at{" "}
-            <span className="purple">AJDigitals</span>.
+            <span className="purple">Freelance AI Engineer & Full Stack Developer</span> at{" "}
+            <span className="purple">DigitalOrbit</span>.
             <br />I am pursuing a{" "}
             <span className="purple">B.E. in AI &amp; Machine Learning</span>{" "}
             at{" "}
