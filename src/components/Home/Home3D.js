@@ -147,7 +147,7 @@ function Home3D() {
     const lidPivot = new THREE.Group();
     lidPivot.position.set(0, 0.07, -1.25);
     laptopGroup.add(lidPivot);
-    lidPivot.rotation.x = -1.15;
+    lidPivot.rotation.x = -0.30; // ~17° past vertical — screen faces the camera
 
     // Lid panel
     const lid = new THREE.Mesh(new THREE.BoxGeometry(3.8, 2.4, 0.1), bodyMat);
@@ -310,10 +310,10 @@ function Home3D() {
         laptopGroup.position.z = Math.cos(t * 5.7) * hoverIntensity * 0.04;
       }
 
-      // Tilt — MUCH larger on hover (×4)
+      // Tilt + Auto-Rotation (gentle spin)
       const tiltY = 0.18 + hoverIntensity * 0.52;
       const tiltX = 0.08 + hoverIntensity * 0.22;
-      laptopGroup.rotation.y = tX * tiltY;
+      laptopGroup.rotation.y = t * 0.22 + tX * tiltY;
       laptopGroup.rotation.x = -tY * tiltX;
 
       // Z-roll (crazy!) — based on horizontal mouse speed on hover
@@ -321,7 +321,7 @@ function Home3D() {
 
       // ── LID BREATHE ─────────────────────────────────────────────────────────
       // Lid angle breathes on hover
-      lidPivot.rotation.x = -1.15 + Math.sin(t * 2.5) * hoverIntensity * 0.06;
+      lidPivot.rotation.x = -0.30 + Math.sin(t * 2.5) * hoverIntensity * 0.06;
 
       // ── SCREEN GLOW ─────────────────────────────────────────────────────────
       const flickerNoise = hoverIntensity > 0.3
@@ -409,9 +409,10 @@ function Home3D() {
       // ── RENDER ───────────────────────────────────────────────────────────────
       renderer.render(scene, camera);
 
-      // ── SCREEN OVERLAY SYNC ───────────────────────────────────────────────────
+      // ── SCREEN OVERLAY SYNC ──────────────────────────────────────────────
       if (screenRef.current && sfRef.current) {
         const { W: cW, H: cH } = dims.current;
+        scene.updateMatrixWorld(true); // ensure matrices are current
         const hw = 1.55, hh = 0.97;
         const corners = [
           new THREE.Vector3(-hw,  hh, 0),
@@ -429,8 +430,9 @@ function Home3D() {
         const minY = Math.min(...corners.map(c => c.y));
         const maxY = Math.max(...corners.map(c => c.y));
 
-        const rx = -tY * (4.5 + hoverIntensity * 8);
-        const ry =  tX * (10  + hoverIntensity * 20);
+        // Mild tilt + Auto-spin offset for CSS
+        const rx = -tY * 4.5;
+        const ry = (t * 0.22 * (180 / Math.PI)) + tX * 10;
         Object.assign(screenRef.current.style, {
           left:      `${minX}px`,
           top:       `${minY}px`,

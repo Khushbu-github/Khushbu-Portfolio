@@ -8,7 +8,6 @@ function Type() {
         strings: [
           "AI Engineer & Full Stack Developer",
           "ML & Data Science Enthusiast",
-          "Hackathon Winner 🏆",
         ],
         autoStart: true,
         loop: true,

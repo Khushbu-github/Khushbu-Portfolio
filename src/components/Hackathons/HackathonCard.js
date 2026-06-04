@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function HackathonCard(props) {
+  const [isRevealed, setIsRevealed] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsRevealed(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.1 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="hackathon-card-new">
+    <div 
+      ref={elementRef}
+      className={`hackathon-card-new ${isRevealed ? "revealed" : ""}`}
+    >
       <div className="hackathon-img-wrapper">
         {props.badge && <div className="hackathon-badge">{props.badge}</div>}
         <img src={props.imgPath} alt="hackathon" className="hackathon-bg-img" />

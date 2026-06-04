@@ -52,54 +52,14 @@ function About() {
             </Row>
           </section>
 
-          {/* Education Section */}
+          {/* Unified Career Roadmap Section */}
           <Card style={sectionCardStyle}>
-            <h1 className="project-heading" style={{ textAlign: "center" }}>
-              <strong className="purple">Education </strong>
+            <h1 className="project-heading" style={{ textAlign: "center", marginBottom: "40px" }}>
+              Professional Journey & <strong className="purple">Education </strong>
             </h1>
-            <Row className="resume" style={{ justifyContent: "center" }}>
+            <Row className="resume" style={{ justifyContent: "center", paddingTop: "0px" }}>
               <Col md={10}>
-                <ExperienceTimeline
-                  title="Dayananda Sagar College of Engineering, Bengaluru"
-                  role="B.E. in Artificial Intelligence and Machine Learning"
-                  duration="2023 – 2027"
-                  description={
-                    <>
-                      Currently pursuing Bachelor of Engineering with a focus on AI and ML.
-                      <br />
-                      Maintaining a strong academic record with a CGPA of <strong className="purple">9.27</strong>.
-                    </>
-                  }
-                />
-                <ExperienceTimeline
-                  title="JS Pre-University College, Bengaluru"
-                  duration="2021 – 2023"
-                  description={
-                    <>
-                      Completed PU education with an outstanding score of <strong className="purple">96%</strong>.
-                    </>
-                  }
-                />
-                <ExperienceTimeline
-                  title="Pine Woods English School, Bengaluru"
-                  duration="2015 – 2021"
-                  description={
-                    <>
-                      Completed secondary education with a distinction score of <strong className="purple">97%</strong>.
-                    </>
-                  }
-                />
-              </Col>
-            </Row>
-          </Card>
-
-          {/* Experience Section */}
-          <Card style={sectionCardStyle}>
-            <h1 className="project-heading" style={{ textAlign: "center" }}>
-              Professional <strong className="purple">Experience </strong>
-            </h1>
-            <Row className="resume" style={{ justifyContent: "center" }}>
-              <Col md={10}>
+                {/* Professional Experience First */}
                 <ExperienceTimeline
                   title="DigitalOrbit"
                   role="Freelance AI Engineer & Full Stack Developer"
@@ -121,6 +81,40 @@ function About() {
                       Built reusable UI components using React and Tailwind CSS.
                       <br />
                       Integrated frontend modules with backend APIs in an <strong className="purple">agile startup environment</strong>.
+                    </>
+                  }
+                />
+                
+                {/* Education Section Next */}
+                <ExperienceTimeline
+                  title="Dayananda Sagar College of Engineering, Bengaluru"
+                  role="B.E. in Artificial Intelligence and Machine Learning"
+                  duration="2023 – 2027"
+                  description={
+                    <>
+                      Currently pursuing Bachelor of Engineering with a focus on AI and ML.
+                      <br />
+                      Maintaining a strong academic record with a CGPA of <strong className="purple">9.27</strong>.
+                    </>
+                  }
+                />
+                <ExperienceTimeline
+                  title="JS Pre-University College, Bengaluru"
+                  role="Pre-University Education (PCMB)"
+                  duration="2021 – 2023"
+                  description={
+                    <>
+                      Completed PU education with an outstanding score of <strong className="purple">96%</strong>.
+                    </>
+                  }
+                />
+                <ExperienceTimeline
+                  title="Pine Woods English School, Bengaluru"
+                  role="Secondary Education (SSLC)"
+                  duration="2015 – 2021"
+                  description={
+                    <>
+                      Completed secondary education with a distinction score of <strong className="purple">97%</strong>.
                     </>
                   }
                 />

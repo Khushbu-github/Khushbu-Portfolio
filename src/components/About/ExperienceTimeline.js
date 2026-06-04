@@ -1,8 +1,32 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 function ExperienceTimeline(props) {
+  const [isRevealed, setIsRevealed] = useState(false);
+  const elementRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsRevealed(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      { threshold: 0.15 }
+    );
+
+    if (elementRef.current) {
+      observer.observe(elementRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   return (
-    <div className="resume-item">
+    <div 
+      ref={elementRef}
+      className={`resume-item ${isRevealed ? "revealed" : ""}`}
+    >
       <h3 className="resume-title" style={{ fontSize: "1.2em", marginBottom: "5px" }}>{props.title}</h3>
       {props.role && (
         <p>

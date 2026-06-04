@@ -609,14 +609,19 @@ button:focus {
   border-radius: 12px;
   box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
   border: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 60px; /* Doubled padding for smaller image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .project-img {
-  width: 100%;
-  height: auto;
+  width: auto;
+  max-width: 100%;
+  max-height: 280px; /* Reduced from 380px */
   display: block;
   transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
-  opacity: 0.9;
+  opacity: 0.85;
 }
 
 .project-landscape-card:hover .project-img {
@@ -1579,49 +1584,51 @@ button:focus {
   pointer-events: none;
 }
 .orbit-wrapper.spinning {
-  animation: wrapperSpin 14s linear infinite;
+  animation: wrapperSpin 18s linear infinite;
+  transform-style: preserve-3d;
 }
 @keyframes wrapperSpin {
-  to { transform: rotate(360deg); }
+  from { transform: rotateY(0deg); }
+  to   { transform: rotateY(360deg); }
 }
 
-/* Individual tag — positioned using --x / --y set in JS */
+/* Individual tag — positioned using --x / --y / --z set in JS */
 .skill-tag {
   position: absolute;
   /* collapsed state: at center, invisible */
   opacity: 0;
-  transform: translate(-50%, -50%);
+  transform: translate3d(0, 0, 0);
   transition:
     opacity    0.4s ease  var(--delay, 0s),
     transform  0.55s cubic-bezier(0.34, 1.56, 0.64, 1) var(--delay, 0s);
 
-  font-size: 0.6rem;
+  font-size: 0.62rem;
   font-weight: 700;
   padding: 4px 10px;
   border-radius: 20px;
   background: rgba(12, 8, 35, 0.9);
   border: 1px solid var(--color, #7755ff);
   color: var(--color, #aa88ff);
-  box-shadow: 0 0 10px rgba(100, 80, 255, 0.3);
+  box-shadow: 0 0 12px rgba(100, 80, 255, 0.25);
   white-space: nowrap;
   letter-spacing: 0.04em;
   pointer-events: none;
+  backface-visibility: hidden; /* Hide tags when facing away */
 }
 
-/* Expanded: translate to x/y position */
+/* Expanded: translate to 3D position */
 .skill-tag.visible {
   opacity: 1;
-  transform: translate(calc(var(--x) - 50%), calc(var(--y) - 50%));
+  transform: translate3d(var(--x), var(--y), var(--z));
 }
 
-/* Counter-spin so text stays upright while wrapper spins */
+/* Counter-spin so text stays facing camera while globe spins */
 .orbit-wrapper.spinning .skill-tag.visible {
-  animation: counterSpin 14s linear infinite;
-  animation-delay: 0s;
+  animation: counterSpinY 18s linear infinite;
 }
-@keyframes counterSpin {
-  from { transform: translate(calc(var(--x) - 50%), calc(var(--y) - 50%)) rotate(0deg); }
-  to   { transform: translate(calc(var(--x) - 50%), calc(var(--y) - 50%)) rotate(-360deg); }
+@keyframes counterSpinY {
+  from { transform: translate3d(var(--x), var(--y), var(--z)) rotateY(0deg); }
+  to   { transform: translate3d(var(--x), var(--y), var(--z)) rotateY(-360deg); }
 }
 
 /* Hint text */
@@ -1632,10 +1639,54 @@ button:focus {
   letter-spacing: 0.04em;
 }
 
+/* ── Entrance Animations (Scroll Reveal) ────────────────── */
+
+/* Timeline items (Education/Experience) */
+.resume-item {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.resume-item.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Projects (Left-to-Right Image) */
+.project-landscape-card .project-img-container {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.project-landscape-card.revealed .project-img-container {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Projects Content (Fade up) */
+.project-landscape-card .project-content-wrapper {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: all 1s cubic-bezier(0.2, 1, 0.3, 1) 0.2s;
+}
+.project-landscape-card.revealed .project-content-wrapper {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Hackathons (Left-to-Right) */
+.hackathon-card-new {
+  opacity: 0;
+  transform: translateX(-100px);
+  transition: all 1.2s cubic-bezier(0.2, 1, 0.3, 1);
+}
+.hackathon-card-new.revealed {
+  opacity: 1;
+  transform: translateX(0);
+}
+
 @media (max-width: 767px) {
   .skill-orb-container { width: 260px; height: 260px; }
   .orb-glow-ring       { width: 215px; height: 215px; }
   .skill-tag           { font-size: 0.52rem; padding: 3px 7px; }
 }
-
-
