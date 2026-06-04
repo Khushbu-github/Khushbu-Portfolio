@@ -27,28 +27,25 @@ function About() {
   return (
     <>
       <Particle />
-      <Container fluid className="about-section">
+      <Container fluid className="about-section" id="about">
         <Container>
           {/* Introduction Section */}
           <section>
             <Row style={{ justifyContent: "center", padding: "10px", marginBottom: "40px" }}>
               <Col
                 md={7}
-                style={{
-                  justifyContent: "center",
-                  paddingTop: "30px",
-                  paddingBottom: "50px",
-                }}
+                xs={12}
+                className="about-description"
               >
-                <h1 style={{ fontSize: "2.1em", paddingBottom: "20px" }}>
+                <h1 className="about-title">
                   Know Who <strong className="purple">I'M</strong>
                 </h1>
                 <AboutCard />
               </Col>
               <Col
                 md={5}
-                style={{ paddingTop: "120px", paddingBottom: "50px" }}
-                className="about-img"
+                xs={12}
+                className="about-img-container"
               >
                 <img src={laptopImg} alt="about" className="img-fluid" />
               </Col>

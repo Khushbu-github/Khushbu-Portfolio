@@ -6,6 +6,7 @@ import { TbVectorTriangle, TbMathFunction, TbMathIntegral } from "react-icons/tb
 import { MdAutoGraph, MdOutlineModelTraining, MdTune } from "react-icons/md";
 import { FaDatabase, FaChartBar, FaDice } from "react-icons/fa";
 import { BsGraphUp } from "react-icons/bs";
+import SkillOrb from "./SkillOrb";
 import C from "../../Assets/TechIcons/C++.svg";
 import Javascript from "../../Assets/TechIcons/Javascript.svg";
 import Node from "../../Assets/TechIcons/Node.svg";
@@ -25,6 +26,9 @@ import AWS from "../../Assets/TechIcons/AWS.svg";
 function Techstack() {
   return (
     <>
+      {/* Holographic Skill Orb */}
+      <SkillOrb />
+
       {/* Development Skills */}
       <Row style={{ justifyContent: "center", paddingBottom: "50px" }}>
         <Col xs={4} md={2} className="tech-icons">

@@ -1,6 +1,6 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
-import ProjectCard from "./ProjectCards";
+import { Container } from "react-bootstrap";
+import ProjectLandscape from "./ProjectLandscape";
 import Particle from "../Particle";
 import intellicredit from "../../Assets/Projects/intellicredit.png";
 import interxai from "../../Assets/Projects/interxai.png";
@@ -9,69 +9,76 @@ import incluverse from "../../Assets/Projects/incluverse.png";
 import smartcity from "../../Assets/Projects/smartcity.png";
 
 function Projects() {
+  const projectsData = [
+    {
+      title: "IntelliCredit",
+      subtitle: "AI-Driven Credit Appraisal Engine",
+      description: "Corporate credit appraisal engine with PDF OCR, GST anomaly detection, and MCA research agent. Built a 5Cs scoring pipeline with AI-driven decisions and automated CAM report generation.",
+      imgPath: intellicredit,
+      ghLink: "https://github.com/Khushbu-github/Intellicredit",
+      demoLink: "https://intellicredit-lilac.vercel.app",
+      tags: ["PYTHON", "FASTAPI", "OCR", "PANDAS"],
+      category: "FINTECH AI",
+      year: "2025"
+    },
+    {
+      title: "Smart Incident Analyzer",
+      subtitle: "Predictive Analytics for Bengaluru City",
+      description: "AI-powered platform integrating traffic, accident, and weather data for risk prediction. Features a RAG pipeline and interactive map-based dashboard for real-time urban insights.",
+      imgPath: smartcity,
+      ghLink: "https://github.com/Khushbu-github/Bengaluru-Smart-City-Incident-Analyzer",
+      tags: ["XGBOOST", "LANGCHAIN", "DATA SCIENCE", "INTERACTIVE MAPS"],
+      category: "DATA SCIENCE",
+      year: "2024",
+      customNumber: "05"
+    },
+    {
+      title: "InterXAI",
+      subtitle: "AI-Assisted Career Platform",
+      description: "AI-powered interview automation system with Groq LLM for question generation and FaceApi.js for live presence monitoring. Implemented an end-to-end pipeline from ATS screening to interview conduction.",
+      imgPath: interxai,
+      ghLink: "https://github.com/Khushbu-github/InterXAI",
+      tags: ["GROQ", "FACIAL RECOGNITION", "REACT", "STABLE DIFFUSION"],
+      category: "HR TECH",
+      year: "2025"
+    },
+    {
+      title: "Health Dash",
+      subtitle: "Secure EHR & Health Analytics",
+      description: "Hybrid Electronic Health Record (EHR) system with secure digital record management. Implemented decentralized storage using Pinata and ML-based accident detection with role-based dashboards.",
+      imgPath: healthdash,
+      ghLink: "https://github.com/Khushbu-github/ArogyaKhosh",
+      tags: ["BLOCKCHAIN", "IPFS", "REACT", "MACHINE LEARNING"],
+      category: "HEALTHCARE",
+      year: "2024"
+    },
+    {
+      title: "IncluVerse",
+      subtitle: "Accessibility-First Digital Platform",
+      description: "Accessibility-focused digital platform with voice commands, OCR, and community engagement features. Built to empower differently-abled users with intelligent assistive technologies.",
+      imgPath: incluverse,
+      ghLink: "https://github.com/Khushbu-github/IncluVerse-AIOP-For-Diabled",
+      demoLink: "https://inclu-verse-aiop-for-diabled.vercel.app",
+      tags: ["TESSERACT.JS", "LANGCHAIN", "VOICE AI", "ACCESSIBILITY"],
+      category: "SOCIAL IMPACT",
+      year: "2024"
+    }
+  ];
+
   return (
-    <Container fluid className="project-section">
+    <Container fluid className="project-section" id="projects">
       <Particle />
       <Container>
         <h1 className="project-heading">
-          My Recent <strong className="purple">Works </strong>
+          Selected <strong className="purple">Projects </strong>
         </h1>
-        <p style={{ color: "white" }}>
-          Here are a few projects I've worked on recently.
+        <p style={{ color: "white", marginBottom: "50px" }}>
+          A showcase of my recent engineering and AI research works.
         </p>
-        <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={intellicredit}
-              isBlog={false}
-              title="IntelliCredit"
-              description="Corporate credit appraisal engine with PDF OCR, GST anomaly detection, and MCA research agent. Built a 5Cs scoring pipeline with AI-driven approve/reject decisions and automated CAM report generation."
-              ghLink="https://github.com/Khushbu-github/Intellicredit"
-              demoLink="https://intellicredit-lilac.vercel.app"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={interxai}
-              isBlog={false}
-              title="InterXAI"
-              description="AI-powered interview automation system with Groq LLM for question generation and FaceApi.js for live presence monitoring. Implemented an end-to-end pipeline from ATS screening to interview conduction."
-              ghLink="https://github.com/Khushbu-github/InterXAI"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={healthdash}
-              isBlog={false}
-              title="Health Dash"
-              description="Hybrid Electronic Health Record (EHR) system with secure digital record management. Implemented decentralized storage using Pinata and ML-based accident detection with role-based dashboards."
-              ghLink="https://github.com/Khushbu-github/ArogyaKhosh"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={incluverse}
-              isBlog={false}
-              title="IncluVerse"
-              description="Accessibility-focused digital platform with voice commands, OCR (Tesseract.js), multilingual translation (LangChain), and community engagement features for differently-abled users."
-              ghLink="https://github.com/Khushbu-github/IncluVerse-AIOP-For-Diabled"
-              demoLink="https://inclu-verse-aiop-for-diabled.vercel.app"
-            />
-          </Col>
-
-          <Col md={4} className="project-card">
-            <ProjectCard
-              imgPath={smartcity}
-              isBlog={false}
-              title="Bengaluru Smart City Incident Analyzer"
-              description="AI-powered platform integrating traffic, accident, complaint, and weather data for risk prediction and hotspot detection using Random Forest and XGBoost. Features a RAG pipeline with LangChain and an interactive map-based dashboard for real-time insights."
-              ghLink="https://github.com/Khushbu-github/Bengaluru-Smart-City-Incident-Analyzer"
-            />
-          </Col>
-        </Row>
+        
+        {projectsData.map((project, index) => (
+          <ProjectLandscape key={index} index={index} {...project} />
+        ))}
       </Container>
     </Container>
   );

@@ -5,11 +5,11 @@ import Tilt from "react-parallax-tilt";
 
 function Home2() {
   return (
-    <Container fluid className="home-about-section" id="about">
+    <Container fluid className="home-about-section">
       <Container>
         <Row>
-          <Col md={8} className="home-about-description">
-            <h1 style={{ fontSize: "2.6em" }}>
+          <Col md={8} xs={12} className="home-about-description">
+            <h1 className="home-about-title">
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
@@ -46,7 +46,7 @@ function Home2() {
               levels, I thrive on rapid prototyping and turning innovative ideas into functional products.
             </p>
           </Col>
-          <Col md={4} className="myAvtar">
+          <Col md={4} xs={12} className="myAvtar">
             <Tilt>
               <img src={myImg} className="img-fluid" alt="avatar" />
             </Tilt>

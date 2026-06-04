@@ -10,7 +10,7 @@ import udaya from "../../Assets/Hackathons/UDAYA.jpeg";
 
 function Hackathons() {
   return (
-    <Container fluid className="project-section">
+    <Container fluid className="project-section" id="hackathons">
       <Particle />
       <Container>
         <h1 className="project-heading">
@@ -20,49 +20,67 @@ function Hackathons() {
           Here are some of the hackathons I've participated in and won.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>
-          <Col md={4} className="project-card">
+          <Col lg={6} md={12} className="hackathon-col-card">
             <HackathonCard
               imgPath={srujana}
-              title="Winner – Srujana 2025-Y"
-              description="Achieved 1st place in a high-stakes 72-hour Hackathon hosted by Chanakya University. Developed an innovative solution that stood out among numerous entries, receiving the award from Dr. S. Somanath, Former Chairman of ISRO."
+              badge="1ST PLACE"
+              title="Srujana 2025"
+              subtitle="Chanakya University, Bengaluru"
+              year="2025"
+              description="Achieved 1st place in a 72-hour Hackathon. Awarded by Dr. S. Somanath, Chairman of ISRO, for an innovative AI solution."
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col lg={6} md={12} className="hackathon-col-card">
             <HackathonCard
               imgPath={devduel}
-              title="Runner-up – Dev Duel Hackathon"
-              description="Secured 2nd Prize at the prestigious IIT Hyderabad Dev Duel. Our team designed a robust application focusing on scalability and user experience, competing with top talent from various institutes."
+              badge="RUNNER-UP"
+              title="Dev Duel 1.0"
+              subtitle="IIT Hyderabad"
+              year="2025"
+              description="Secured 2nd Prize at the prestigious IIT Hyderabad Dev Duel. Built a robust application focused on scalability and UX."
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col lg={6} md={12} className="hackathon-col-card">
             <HackathonCard
               imgPath={aiverse}
-              title="Winner – AI Verse Hackathon"
-              description="Winner of the AI Verse Hackathon at Amrita Vishwa Vidyapeetham, Coimbatore. Built an AI-driven project that leveraged cutting-edge machine learning techniques to solve complex real-world data challenges."
+              badge="1ST PLACE"
+              title="AI Verse"
+              subtitle="Amrita Vishwa Vidyapeetham, Coimbatore"
+              year="2025"
+              description="Winner of the AI Verse Hackathon. Developed an AI-driven project solving complex real-world data challenges."
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col lg={6} md={12} className="hackathon-col-card">
             <HackathonCard
               imgPath={hacktocrack}
-              title="Winner – HacktoCrack"
-              description="Led my team to victory in the 36-hour National-Level Hack-To-Crack at VIMEET Navi Mumbai. Outshone 100+ teams by delivering a polished, functional prototype under Intense time constraints."
+              badge="WINNER"
+              title="HackToCrack"
+              subtitle="VIMEET Navi Mumbai"
+              year="2024"
+              description="Victory in the 36-hour National-Level Hackathon. Outshone 100+ teams with a polished, functional AI prototype."
             />
           </Col>
 
-          <Col md={4} className="project-card">
+          <Col lg={6} md={12} className="hackathon-col-card">
             <HackathonCard
               imgPath={udaya}
-              title="Runner-up – Udhaya"
-              description="Named Runner-up in the Udhaya 12-hour sprint hackathon. Our team successfully prototyped a solution for rapid deployment, ranking among the top participants out of over 100 competing teams."
+              badge="RUNNER-UP"
+              title="Udhaya 1.0"
+              subtitle="DSCE, Bengaluru"
+              year="2023"
+              description="Named Runner-up in a 12-hour sprint. Prototyped a rapid-deployment solution among 100+ competing teams."
             />
           </Col>
-          <Col md={4} className="project-card">
+          <Col lg={6} md={12} className="hackathon-col-card">
             <HackathonCard
-              title="5+ Other Finalist Achievements"
-              description="Beyond these wins, I have consistently been a finalist in 5+ other regional and national hackathons, demonstrating a track record of innovation and persistent problem-solving under pressure."
+              badge="FINALIST"
+              title="15+ Other Achievements"
+              subtitle="Regional & National Events"
+              year="2023-2025"
+              description="Consistently reached the finals in over 5 national events, demonstrating a track record of innovation under pressure."
             />
           </Col>
         </Row>
