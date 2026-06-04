@@ -4,7 +4,6 @@ import ProjectLandscape from "./ProjectLandscape";
 import Particle from "../Particle";
 import intellicredit from "../../Assets/Projects/intellicredit.png";
 import interxai from "../../Assets/Projects/interxai.png";
-import healthdash from "../../Assets/Projects/healthdash.png";
 import incluverse from "../../Assets/Projects/incluverse.png";
 import smartcity from "../../Assets/Projects/smartcity.png";
 
@@ -41,16 +40,6 @@ function Projects() {
       tags: ["GROQ", "FACIAL RECOGNITION", "REACT", "STABLE DIFFUSION"],
       category: "HR TECH",
       year: "2025"
-    },
-    {
-      title: "Health Dash",
-      subtitle: "Secure EHR & Health Analytics",
-      description: "Hybrid Electronic Health Record (EHR) system with secure digital record management. Implemented decentralized storage using Pinata and ML-based accident detection with role-based dashboards.",
-      imgPath: healthdash,
-      ghLink: "https://github.com/Khushbu-github/ArogyaKhosh",
-      tags: ["BLOCKCHAIN", "IPFS", "REACT", "MACHINE LEARNING"],
-      category: "HEALTHCARE",
-      year: "2024"
     },
     {
       title: "IncluVerse",

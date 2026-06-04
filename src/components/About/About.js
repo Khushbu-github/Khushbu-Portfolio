@@ -10,8 +10,6 @@ import ExperienceTimeline from "./ExperienceTimeline";
 import { FaChalkboardTeacher, FaHandsHelping } from "react-icons/fa";
 import { GiGavel } from "react-icons/gi";
 import { HiUsers } from "react-icons/hi";
-
-
 import Card from "react-bootstrap/Card";
 
 function About() {
@@ -32,34 +30,25 @@ function About() {
           {/* Introduction Section */}
           <section>
             <Row style={{ justifyContent: "center", padding: "10px", marginBottom: "40px" }}>
-              <Col
-                md={7}
-                xs={12}
-                className="about-description"
-              >
+              <Col md={7} xs={12} className="about-description">
                 <h1 className="about-title">
                   Know Who <strong className="purple">I'M</strong>
                 </h1>
                 <AboutCard />
               </Col>
-              <Col
-                md={5}
-                xs={12}
-                className="about-img-container"
-              >
+              <Col md={5} xs={12} className="about-img-container">
                 <img src={laptopImg} alt="about" className="img-fluid" />
               </Col>
             </Row>
           </section>
 
-          {/* Unified Career Roadmap Section */}
+          {/* Experience Section */}
           <Card style={sectionCardStyle}>
             <h1 className="project-heading" style={{ textAlign: "center", marginBottom: "40px" }}>
-              Professional Journey & <strong className="purple">Education </strong>
+              Professional <strong className="purple">Experience </strong>
             </h1>
             <Row className="resume" style={{ justifyContent: "center", paddingTop: "0px" }}>
               <Col md={10}>
-                {/* Professional Experience First */}
                 <ExperienceTimeline
                   title="DigitalOrbit"
                   role="Freelance AI Engineer & Full Stack Developer"
@@ -84,8 +73,17 @@ function About() {
                     </>
                   }
                 />
-                
-                {/* Education Section Next */}
+              </Col>
+            </Row>
+          </Card>
+
+          {/* Education Section */}
+          <Card style={sectionCardStyle}>
+            <h1 className="project-heading" style={{ textAlign: "center", marginBottom: "40px" }}>
+              My <strong className="purple">Education </strong>
+            </h1>
+            <Row className="resume" style={{ justifyContent: "center", paddingTop: "0px" }}>
+              <Col md={10}>
                 <ExperienceTimeline
                   title="Dayananda Sagar College of Engineering, Bengaluru"
                   role="B.E. in Artificial Intelligence and Machine Learning"
