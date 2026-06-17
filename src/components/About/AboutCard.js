@@ -42,7 +42,7 @@ function AboutCard() {
          
           </ul>
 
-          <p style={{ color: "rgb(155 126 172)" }}>
+          <p style={{ color: "#be50f4", fontWeight: "600", fontStyle: "italic" }}>
             "Code is not just logic — it's a bridge between ideas and impact!"{" "}
           </p>
           {/* <footer className="blockquote-footer">Khushbu</footer> */}

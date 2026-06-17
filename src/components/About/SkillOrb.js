@@ -2,54 +2,59 @@ import React, { useEffect, useRef, useState } from "react";
 import * as THREE from "three";
 
 const SKILLS = [
-  { label: "C++", color: "#00599c" },
-  { label: "Javascript", color: "#f7df1e" },
-  { label: "Typescript", color: "#3178c6" },
-  { label: "Python", color: "#3776ab" },
-  { label: "Node.Js", color: "#339933" },
-  { label: "React.Js", color: "#61dafb" },
-  { label: "Next.js", color: "#ffffff" },
-  { label: "Express.js", color: "#ffffff" },
-  { label: "FastAPI", color: "#009688" },
-  { label: "Tailwind CSS", color: "#06b6d4" },
-  { label: "MongoDB", color: "#47a248" },
-  { label: "PostgreSQL", color: "#4169e1" },
-  { label: "Firebase", color: "#ffca28" },
-  { label: "Redis", color: "#dc382d" },
-  { label: "Docker", color: "#2496ed" },
-  { label: "AWS", color: "#ff9900" },
-  { label: "Git", color: "#f05032" },
-  { label: "Postman", color: "#ff6c37" },
-  { label: "PyTorch", color: "#ee4c2c" },
-  { label: "LLMs", color: "#7c3aed" },
-  { label: "Fine-tuning", color: "#ec4899" },
-  { label: "MLOps", color: "#10b981" },
-  { label: "LangChain", color: "#12b886" },
-  { label: "RAG", color: "#3b82f6" },
-  { label: "Vector DBs", color: "#8b5cf6" },
-  { label: "Computer Vision", color: "#6366f1" },
-  { label: "Diffusion Models", color: "#f43f5e" },
-  { label: "Multimodal AI", color: "#8b5cf6" },
-  { label: "Generative AI", color: "#06b6d4" },
-  { label: "Linear Algebra", color: "#f59e0b" },
-  { label: "Calculus", color: "#ef4444" },
-  { label: "Differentiation", color: "#8b5cf6" },
-  { label: "Probability", color: "#10b981" },
-  { label: "Statistics", color: "#3b82f6" },
-  { label: "Optimization", color: "#f97316" }
+  // Full Stack
+  { label: "C++", color: "#be50f4", cat: "fs" },
+  { label: "Javascript", color: "#be50f4", cat: "fs" },
+  { label: "Typescript", color: "#be50f4", cat: "fs" },
+  { label: "Python", color: "#be50f4", cat: "fs" },
+  { label: "Node.Js", color: "#be50f4", cat: "fs" },
+  { label: "React.Js", color: "#be50f4", cat: "fs" },
+  { label: "Next.js", color: "#be50f4", cat: "fs" },
+  { label: "Express.js", color: "#be50f4", cat: "fs" },
+  { label: "FastAPI", color: "#be50f4", cat: "fs" },
+  { label: "Tailwind CSS", color: "#be50f4", cat: "fs" },
+  { label: "MongoDB", color: "#be50f4", cat: "fs" },
+  { label: "PostgreSQL", color: "#be50f4", cat: "fs" },
+  { label: "Firebase", color: "#be50f4", cat: "fs" },
+  { label: "Redis", color: "#be50f4", cat: "fs" },
+  { label: "Docker", color: "#be50f4", cat: "fs" },
+  { label: "AWS", color: "#be50f4", cat: "fs" },
+  { label: "Git", color: "#be50f4", cat: "fs" },
+  { label: "Postman", color: "#be50f4", cat: "fs" },
+  
+  // AI/ML
+  { label: "PyTorch", color: "#be50f4", cat: "ai" },
+  { label: "LLMs", color: "#be50f4", cat: "ai" },
+  { label: "Fine-tuning", color: "#be50f4", cat: "ai" },
+  { label: "MLOps", color: "#be50f4", cat: "ai" },
+  { label: "LangChain", color: "#be50f4", cat: "ai" },
+  { label: "RAG", color: "#be50f4", cat: "ai" },
+  { label: "Vector DBs", color: "#be50f4", cat: "ai" },
+  { label: "Computer Vision", color: "#be50f4", cat: "ai" },
+  { label: "Diffusion Models", color: "#be50f4", cat: "ai" },
+  { label: "Multimodal AI", color: "#be50f4", cat: "ai" },
+  { label: "Generative AI", color: "#be50f4", cat: "ai" },
+  { label: "Linear Algebra", color: "#be50f4", cat: "ai" },
+  { label: "Calculus", color: "#be50f4", cat: "ai" },
+  { label: "Differentiation", color: "#be50f4", cat: "ai" },
+  { label: "Probability", color: "#be50f4", cat: "ai" },
+  { label: "Statistics", color: "#be50f4", cat: "ai" },
+  { label: "Optimization", color: "#be50f4", cat: "ai" }
 ];
 
-const RADIUS = 165; // Slightly larger for more skills
+const RADIUS = 150; 
 
 function SkillOrb() {
   const mountRef = useRef(null);
   const [hovered, setHovered] = useState(false);
   const [tagPos, setTagPos] = useState([]);
+  const [category, setCategory] = useState("fs"); // 'fs' or 'ai'
 
-  // Pre-calculate spherical positions
+  // Pre-calculate spherical positions based on active category
   useEffect(() => {
-    const n = SKILLS.length;
-    const positions = SKILLS.map((skill, i) => {
+    const activeSkills = SKILLS.filter(s => s.cat === category);
+    const n = activeSkills.length;
+    const positions = activeSkills.map((skill, i) => {
       const phi = Math.acos(1 - 2 * (i + 0.5) / n);
       const theta = Math.PI * (1 + Math.sqrt(5)) * (i + 0.5);
       
@@ -60,11 +65,11 @@ function SkillOrb() {
         x: Math.sin(phi) * Math.cos(theta),
         y: Math.sin(phi) * Math.sin(theta),
         z: Math.cos(phi),
-        initialDelay: i * 0.02
+        initialDelay: i * 0.03
       };
     });
     setTagPos(positions);
-  }, []);
+  }, [category]);
 
   useEffect(() => {
     const mount = mountRef.current;
@@ -103,7 +108,7 @@ function SkillOrb() {
     const wire = new THREE.Mesh(new THREE.SphereGeometry(1.22, 24, 24), wireMat);
     scene.add(wire);
 
-    // Orbit rings (Multiple for more complex look)
+    // Orbit rings
     const ringGroup = new THREE.Group();
     [0, Math.PI/3, -Math.PI/3].forEach((rot, i) => {
       const ring = new THREE.Mesh(
@@ -117,7 +122,7 @@ function SkillOrb() {
     scene.add(ringGroup);
 
     // Particles
-    const pCount = 300; // More particles
+    const pCount = 200;
     const pPos   = new Float32Array(pCount * 3);
     for (let i = 0; i < pCount; i++) {
         const phi = Math.acos(2 * Math.random() - 1);
@@ -172,6 +177,22 @@ function SkillOrb() {
 
   return (
     <div className="skill-orb-section">
+      {/* Category Toggle */}
+      <div className="skill-cat-toggle">
+        <button 
+          className={`skill-cat-btn ${category === 'fs' ? 'active' : ''}`}
+          onClick={() => setCategory('fs')}
+        >
+          Full Stack Development
+        </button>
+        <button 
+          className={`skill-cat-btn ${category === 'ai' ? 'active' : ''}`}
+          onClick={() => setCategory('ai')}
+        >
+          AI / ML
+        </button>
+      </div>
+
       <div
         className={`skill-orb-container${hovered ? " hovered" : ""}`}
         onMouseEnter={() => setHovered(true)}
@@ -191,10 +212,10 @@ function SkillOrb() {
 
         {/* 3D Skill Cloud */}
         <div className={`orbit-wrapper${hovered ? " spinning" : ""}`} style={{ perspective: '1000px', transformStyle: 'preserve-3d' }}>
-          {tagPos.map((skill, i) => {
+          {tagPos.map((skill) => {
             return (
               <div
-                key={skill.label}
+                key={`${category}-${skill.label}`}
                 className={`skill-tag${hovered ? " visible" : ""}`}
                 style={{
                   "--x":     `${skill.x * RADIUS}px`,
@@ -212,7 +233,7 @@ function SkillOrb() {
       </div>
 
       <p className="skill-orb-hint">
-        Hover to reveal my <span className="purple">tech universe</span>
+        Hover to reveal my <span className="purple">{category === 'fs' ? 'dev stack' : 'AI research'}</span>
       </p>
     </div>
   );

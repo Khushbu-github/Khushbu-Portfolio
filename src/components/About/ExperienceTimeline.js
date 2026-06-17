@@ -25,23 +25,19 @@ function ExperienceTimeline(props) {
   return (
     <div 
       ref={elementRef}
-      className={`resume-item ${isRevealed ? "revealed" : ""}`}
+      className={`resume-item ${props.index % 2 === 0 ? "left" : "right"} ${isRevealed ? "revealed" : ""}`}
     >
-      <h3 className="resume-title" style={{ fontSize: "1.2em", marginBottom: "5px" }}>{props.title}</h3>
-      {props.role && (
-        <p>
-          <em className="purple" style={{ fontWeight: "600", fontSize: "1.1em" }}>{props.role}</em>
-          <br />
-          <span style={{ fontSize: "0.9em", color: "#adb5bd" }}>{props.duration}</span>
-        </p>
-      )}
-      {!props.role && (
-        <p style={{ marginTop: "-5px", marginBottom: "15px" }}>
-          <span style={{ fontSize: "0.9em", color: "#adb5bd" }}>{props.duration}</span>
-        </p>
-      )}
-      <div style={{ textAlign: "justify", fontSize: "1em", color: "white" }}>
-        {props.description}
+      <h3 className="resume-title">{props.title}</h3>
+      <div className="resume-content">
+        {props.role && (
+          <em className="purple" style={{ fontWeight: "700", fontSize: "1.1em", display: "block", marginBottom: "5px" }}>
+            {props.role}
+          </em>
+        )}
+        <span className="resume-duration">{props.duration}</span>
+        <div className="resume-description">
+          {props.description}
+        </div>
       </div>
     </div>
   );

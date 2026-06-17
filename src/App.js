@@ -11,6 +11,7 @@ import {
   BrowserRouter as Router
 } from "react-router-dom";
 import ScrollToTop from "./components/ScrollToTop";
+import CustomCursor from "./components/CustomCursor";
 import "./style.css";
 import "./App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
@@ -29,6 +30,7 @@ function App() {
   return (
     <Router>
       <Preloader load={load} />
+      <CustomCursor />
       <div className="App" id={load ? "no-scroll" : "scroll"}>
         <Navbar />
         <ScrollToTop />

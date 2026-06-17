@@ -59,9 +59,9 @@ function Projects() {
       <Particle />
       <Container>
         <h1 className="project-heading">
-          Selected <strong className="purple">Projects </strong>
+          My <strong className="purple">Projects </strong>
         </h1>
-        <p style={{ color: "white", marginBottom: "50px" }}>
+        <p style={{ marginBottom: "50px" }}>
           A showcase of my recent engineering and AI research works.
         </p>
         

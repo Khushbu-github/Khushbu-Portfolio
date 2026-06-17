@@ -16,7 +16,7 @@ function Hackathons() {
         <h1 className="project-heading">
           My <strong className="purple">Hackathon </strong> Achievements
         </h1>
-        <p style={{ color: "white" }}>
+        <p>
           Here are some of the hackathons I've participated in and won.
         </p>
         <Row style={{ justifyContent: "center", paddingBottom: "10px" }}>

@@ -13,42 +13,41 @@ function Home2() {
               LET ME <span className="purple"> INTRODUCE </span> MYSELF
             </h1>
             <p className="home-about-body">
-              I'm an <b className="purple">AI Engineer & Full-Stack Developer</b> dedicated to bridging the gap between 
-              cutting-edge Machine Learning and robust software engineering. I specialize in building 
-              intelligent, data-driven systems that solve complex real-world challenges.
+              I am an <b className="purple">AI Engineer & Full-Stack Developer</b> at the intersection of 
+              machine intelligence and creative engineering. My mission is to build software that doesn't just work, but <b className="purple">thinks and engages</b>.
               <br />
               <br />
-              I'm proficient in
+              My technical arsenal is led by 
               <i>
                 <b className="purple">
                   {" "}
-                  Python, TypeScript, JavaScript, and C++{" "}
+                  Python, FastAPI, TypeScript, and C++{" "}
                 </b>
               </i>
-              — focusing on developing scalable backend architectures and high-performance AI solutions.
+              — ensuring that every backend I build is as scalable as it is intelligent.
               <br />
               <br />
-              My core expertise lies in
+              I specialize in crafting high-impact AI solutions using
               <i>
                 <b className="purple">
                   {" "}
-                  Generative AI, Large Language Models (LLMs), and RAG systems,{" "}
+                  Generative AI, Large Language Models (LLMs), and RAG Architecture.{" "}
                 </b>
               </i>
-              alongside building full-stack applications with <b className="purple">Node.js, React.js, and Next.js</b>.
+              I don't just build models; I build production-grade systems that solve real problems.
               <br />
               <br />
-              I am passionate about <b className="purple">MLOps, Fine-tuning, and Computer Vision</b>, 
-              ensuring that AI models are not only accurate but also production-ready.
+              On the frontend, I use <b className="purple">GSAP, Three.js (R3F), and React</b> to create 
+              immersive, performance-optimized digital experiences that push the boundaries of the web.
               <br />
               <br />
-              With <b className="purple">10+ Hackathon wins</b> 🏆 at national and college
-              levels, I thrive on rapid prototyping and turning innovative ideas into functional products.
+              With over <b className="purple">10+ Hackathon victories</b> 🏆, I am a builder who 
+              thrives on rapid prototyping and turning complex logic into seamless user experiences.
             </p>
           </Col>
           <Col md={4} xs={12} className="myAvtar">
             <Tilt>
-              <img src={myImg} className="img-fluid" alt="avatar" />
+              <img src={myImg} className="img-fluid" alt="avatar" style={{ borderRadius: "20px", boxShadow: "0 10px 40px rgba(0, 0, 0, 0.5)" }} />
             </Tilt>
           </Col>
         </Row>
