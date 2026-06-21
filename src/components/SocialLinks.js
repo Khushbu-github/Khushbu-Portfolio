@@ -1,6 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
-import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
+import { AiFillGithub, AiOutlineMail, AiFillPhone } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 import { CgFileDocument } from "react-icons/cg";
 
@@ -42,6 +42,15 @@ function SocialLinks({ showResume = true }) {
               title="Email"
             >
               <AiOutlineMail />
+            </a>
+          </li>
+          <li className="social-icons">
+            <a
+              href="tel:+919663553530"
+              className="icon-colour home-social-icons"
+              title="Contact Number"
+            >
+              <AiFillPhone />
             </a>
           </li>
           {showResume && (

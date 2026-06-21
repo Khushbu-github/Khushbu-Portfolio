@@ -1,6 +1,6 @@
 import React from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { AiFillGithub, AiOutlineMail } from "react-icons/ai";
+import { AiFillGithub, AiOutlineMail, AiFillPhone } from "react-icons/ai";
 import { FaLinkedinIn } from "react-icons/fa";
 
 function Footer() {
@@ -43,6 +43,15 @@ function Footer() {
                 style={{ color: "white" }}
               >
                 <AiOutlineMail />
+              </a>
+            </li>
+            <li className="social-icons">
+              <a
+                href="tel:+919663553530"
+                style={{ color: "white" }}
+                title="Contact Number"
+              >
+                <AiFillPhone />
               </a>
             </li>
           </ul>
